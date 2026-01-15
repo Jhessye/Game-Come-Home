@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2nf48m8u6n5d"]
+
+[ext_resource type="Texture2D" uid="uid://ckqafa4gqaybe" path="res://home_1/pixil-frame-1.png" id="1_0blei"]
+
+[node name="mundo1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0blei")

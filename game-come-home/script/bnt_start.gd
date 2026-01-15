@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://theme/mundo_1.tscn")
+	get_tree().change_scene_to_file("res://cenas/mundo_1.tscn")
 
 
 func _on_bnt_sair_pressed() -> void:

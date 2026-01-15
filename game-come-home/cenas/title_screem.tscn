@@ -1,51 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://idv8oaayck66"]
 
-[ext_resource type="Texture2D" uid="uid://bqmd0iata7ml" path="res://homepg/fundo_1.png" id="1_ej6ux"]
-[ext_resource type="Texture2D" uid="uid://djk36exotnocj" path="res://homepg/JOGAR__1_-removebg-preview.png" id="2_nbwvh"]
-[ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="3_nbwvh"]
-[ext_resource type="Texture2D" uid="uid://cnhhvhajs2b3e" path="res://homepg/boneco_1.png" id="3_pbcer"]
-[ext_resource type="Script" uid="uid://ci0m7das8v64e" path="res://script/bnt_start.gd" id="4_pbcer"]
-[ext_resource type="AudioStream" uid="uid://b5p1qhfm2fjbc" path="res://songs/musica_bg_inicio.wav" id="6_e4ou3"]
-
-[sub_resource type="Animation" id="Animation_pbcer"]
-resource_name = "new_animation"
-length = 1.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bg:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.23333335, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1.0514921, 1.0514921, 1.0514921, 0), Color(1.0514921, 1.0514921, 1.0514921, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.36666667, 0.93333334),
-"transitions": PackedFloat32Array(0.18301071, 1),
-"update": 0,
-"values": [Vector2(-600, 0), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/personagem:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.23333335, 0.73333335, 1.1333333),
-"transitions": PackedFloat32Array(1, 1.0717726, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
+[ext_resource type="Texture2D" uid="uid://bqmd0iata7ml" path="res://homepg/fundo_1.png" id="1_mfjt0"]
+[ext_resource type="Texture2D" uid="uid://djk36exotnocj" path="res://homepg/logo.png" id="2_vb8bm"]
+[ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="3_43qb3"]
+[ext_resource type="Script" uid="uid://ci0m7das8v64e" path="res://script/bnt_start.gd" id="4_kvs6i"]
+[ext_resource type="Texture2D" uid="uid://cnhhvhajs2b3e" path="res://homepg/boneco_1.png" id="5_ani4q"]
+[ext_resource type="AudioStream" uid="uid://b5p1qhfm2fjbc" path="res://songs/musica_bg_inicio.wav" id="6_emutu"]
 
 [sub_resource type="Animation" id="Animation_e4ou3"]
 length = 0.001
@@ -86,6 +46,46 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_pbcer"]
+resource_name = "new_animation"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.100000024, 0.40000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.0514921, 1.0514921, 1.0514921, 0), Color(1.0514921, 1.0514921, 1.0514921, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333335, 0.8),
+"transitions": PackedFloat32Array(0.18301071, 1),
+"update": 0,
+"values": [Vector2(-600, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/personagem:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.100000024, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1.0717726, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7g4ok"]
 _data = {
 &"RESET": SubResource("Animation_e4ou3"),
@@ -102,10 +102,11 @@ grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="."]
 modulate = Color(1.0514921, 1.0514921, 1.0514921, 1)
+self_modulate = Color(0.6693994, 0.82464993, 0.82894874, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_ej6ux")
+texture = ExtResource("1_mfjt0")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -115,8 +116,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 70
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -129,29 +130,30 @@ size_flags_vertical = 4
 theme_override_constants/separation = 10
 
 [node name="logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 0.9647059, 1, 1)
 layout_mode = 2
-texture = ExtResource("2_nbwvh")
+texture = ExtResource("2_vb8bm")
 
 [node name="bnt_start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource("3_nbwvh")
+theme = ExtResource("3_43qb3")
 text = "START"
-script = ExtResource("4_pbcer")
+script = ExtResource("4_kvs6i")
 
 [node name="bnt_sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_nbwvh")
+theme = ExtResource("3_43qb3")
 text = "SAIR"
 
 [node name="bnt_creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_nbwvh")
+theme = ExtResource("3_43qb3")
 text = "CREDITOS"
 
 [node name="personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_pbcer")
+texture = ExtResource("5_ani4q")
 expand_mode = 3
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -161,7 +163,7 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="bg_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_e4ou3")
+stream = ExtResource("6_emutu")
 volume_db = -15.0
 autoplay = true
 
