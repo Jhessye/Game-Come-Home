@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://idv8oaayck66"]
+[gd_scene load_steps=4 format=3 uid="uid://idv8oaayck66"]
+
+[ext_resource type="Texture2D" uid="uid://bqmd0iata7ml" path="res://homepg/fundo_1.png" id="1_ej6ux"]
+[ext_resource type="Texture2D" uid="uid://djk36exotnocj" path="res://homepg/JOGAR__1_-removebg-preview.png" id="2_nbwvh"]
+[ext_resource type="Texture2D" uid="uid://cnhhvhajs2b3e" path="res://homepg/boneco_1.png" id="3_pbcer"]
 
 [node name="TitleScreem" type="Control"]
 layout_mode = 3
@@ -10,22 +14,34 @@ grow_vertical = 2
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ej6ux")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 10
 
 [node name="logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+texture = ExtResource("2_nbwvh")
 
 [node name="bnt_start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -41,3 +57,5 @@ text = "CREDITOS"
 
 [node name="personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+texture = ExtResource("3_pbcer")
+expand_mode = 3
