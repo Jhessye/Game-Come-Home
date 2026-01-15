@@ -1,2 +1,2 @@
-# Game-Come-Home
-Game pixel made in godot
+# Game Come Home
+Game pixel made in godot engine
