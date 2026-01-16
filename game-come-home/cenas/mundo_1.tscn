@@ -263,12 +263,12 @@ autoplay = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 306.0
-offset_top = 121.0
-offset_right = 871.0
-offset_bottom = 160.0
+offset_left = 32.0
+offset_top = 63.0
+offset_right = 763.0
+offset_bottom = 102.0
 theme = ExtResource("14_mh40o")
-text = "! ARRASTE SEUS OBJETOS PARA O INVENTÁRIO !"
+text = "! ARRASTE SEUS OBJETOS ESCOLHIDOS PARA O INVENTÁRIO !"
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="."]
