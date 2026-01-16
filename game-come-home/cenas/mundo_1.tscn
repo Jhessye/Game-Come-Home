@@ -285,6 +285,7 @@ offset_right = -88.0
 offset_bottom = 65.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
+mouse_default_cursor_shape = 2
 theme = SubResource("Theme_lv8r8")
 theme_override_constants/outline_size = 10
 theme_override_constants/h_separation = 4
