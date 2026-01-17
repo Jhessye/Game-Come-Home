@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnv6svryv3wta"]
+
+[ext_resource type="PackedScene" uid="uid://ccsm6gkeydllr" path="res://cenas/play.tscn" id="1_m77gx"]
+[ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/player.tscn" id="2_xfa0a"]
+
+[node name="cena1" type="Node2D"]
+
+[node name="floresta_1" parent="." instance=ExtResource("1_m77gx")]
+
+[node name="player" parent="." instance=ExtResource("2_xfa0a")]
+position = Vector2(162, 293)

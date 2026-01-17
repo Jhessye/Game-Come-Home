@@ -1,6 +1,6 @@
 extends CheckButton
 
-@export var next_scene: String = "res://cenas/play.tscn"
+@export var next_scene: String = "res://cenas/cena_1.tscn"
 @export var delay_seconds: int = 3
 
 @onready var countdown_label: Label = $Label

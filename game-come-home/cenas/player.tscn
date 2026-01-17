@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://broas741jll66"]
+
+[ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/player.gd" id="1_unwft"]
+[ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="2_kthid"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojfc"]
+atlas = ExtResource("2_kthid")
+region = Rect2(146, 519, 72, 112)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15dsx"]
+radius = 21.0
+height = 114.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_unwft")
+
+[node name="player" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_xojfc")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(-5, 2)
+shape = SubResource("CapsuleShape2D_15dsx")
