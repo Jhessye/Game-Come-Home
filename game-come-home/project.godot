@@ -27,5 +27,9 @@ window/stretch/mode="canvas_items"
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/stretch/mode="disabled"
+textures/layer_4="hitbox"
+textures/layer_3="enimes"
+textures/layer_2=""
+textures/layer_1=""

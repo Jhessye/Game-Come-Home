@@ -1,5 +1,5 @@
 extends Control
-
+@onready var hover_sound: AudioStreamPlayer = $CheckButton/AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,3 +28,7 @@ func _drop_data(position, data):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_check_button_mouse_entered() -> void:
+	hover_sound.stop()
+	hover_sound.play()
