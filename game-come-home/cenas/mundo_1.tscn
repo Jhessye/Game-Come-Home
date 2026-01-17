@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://2nf48m8u6n5d"]
+[gd_scene load_steps=29 format=3 uid="uid://2nf48m8u6n5d"]
 
 [ext_resource type="Texture2D" uid="uid://ckqafa4gqaybe" path="res://home_1/bg.png" id="1_0blei"]
 [ext_resource type="Script" uid="uid://d02x5v7lxe3pp" path="res://script/mundo_1.gd" id="1_krbay"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://ceudml0af5ie2" path="res://script/slot.gd" id="12_ulwrf"]
 [ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="14_mh40o"]
 [ext_resource type="Script" uid="uid://buoolib4rsym4" path="res://cenas/check_button.gd" id="15_3ldqw"]
+[ext_resource type="AudioStream" uid="uid://bihx7jlyvdbj5" path="res://songs/button_sfx.mp3" id="17_l3g0e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mh40o"]
 atlas = ExtResource("5_iflx7")
@@ -128,10 +129,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 311.0
-offset_top = 339.0
-offset_right = -683.0
-offset_bottom = -60.0
+offset_left = 302.0
+offset_top = 367.0
+offset_right = -688.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -306,3 +307,9 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_krbay")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lv8r8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CheckButton"]
+stream = ExtResource("17_l3g0e")
+volume_db = -20.0
+
+[connection signal="mouse_entered" from="CheckButton" to="." method="_on_check_button_mouse_entered"]

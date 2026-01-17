@@ -8,8 +8,8 @@ size = Vector2(1152.5, 85)
 [node name="floresta_1" type="StaticBody2D"]
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(573.9999, 323.25)
-scale = Vector2(0.72125, 0.811875)
+position = Vector2(576.49994, 323.25)
+scale = Vector2(0.71812487, 0.811875)
 texture = ExtResource("1_r41r5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
