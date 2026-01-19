@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddbcwxsin628n"]
 
-[ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/floresta_1.tscn" id="1_2dkdh"]
+[ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/fundo.tscn" id="1_2dkdh"]
 [ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="2_cwtp3"]
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_lw6dr"]
 
