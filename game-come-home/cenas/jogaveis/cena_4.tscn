@@ -1,0 +1,140 @@
+[gd_scene load_steps=21 format=3 uid="uid://bqn5h040fmpka"]
+
+[ext_resource type="Texture2D" uid="uid://dfsnxyxiu4u08" path="res://floresta/fundo_caverna.png" id="1_0vxkh"]
+[ext_resource type="Script" uid="uid://b11g80inmrnn8" path="res://script/cena_4.gd" id="1_natfk"]
+[ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="3_huus3"]
+[ext_resource type="PackedScene" uid="uid://c1jgrt1il3de0" path="res://cenas/level_back.tscn" id="4_0tvnm"]
+[ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="4_006iw"]
+[ext_resource type="Texture2D" uid="uid://1suoso416goh" path="res://sprites/personagem/personagem_normal.png" id="5_p7lm0"]
+[ext_resource type="AudioStream" uid="uid://mf4jevctgwaq" path="res://songs/jump_sfx.wav" id="6_kj7wh"]
+[ext_resource type="AudioStream" uid="uid://dtrescpryitoi" path="res://songs/walking_sfx.mp3" id="7_jpl81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crkup"]
+size = Vector2(1150.5, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t06o1"]
+size = Vector2(28, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojfc"]
+atlas = ExtResource("4_006iw")
+region = Rect2(146, 519, 72, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0j6"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(204, 121, 98, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bq56"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(105, 121, 98, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15dsx"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(297, 119, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v4ht"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(99, 0, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y2i1"]
+atlas = ExtResource("4_006iw")
+region = Rect2(99, 122, 98, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogt8j"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(198, 119, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijvs"]
+atlas = ExtResource("5_p7lm0")
+region = Rect2(198, 0, 98, 119)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp0j6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp0j6")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_8bq56")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15dsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v4ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y2i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogt8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijvs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15dsx"]
+radius = 21.0
+height = 106.0
+
+[node name="caverna" type="Node2D"]
+script = ExtResource("1_natfk")
+
+[node name="fundo" type="StaticBody2D" parent="."]
+
+[node name="img" type="Sprite2D" parent="fundo"]
+texture_filter = 1
+position = Vector2(577.5, 325)
+scale = Vector2(0.719375, 0.81)
+texture = ExtResource("1_0vxkh")
+
+[node name="chão" type="CollisionShape2D" parent="fundo"]
+position = Vector2(577.25, 623)
+shape = SubResource("RectangleShape2D_crkup")
+
+[node name="parede2" type="CollisionShape2D" parent="fundo"]
+position = Vector2(1155, 292)
+shape = SubResource("RectangleShape2D_t06o1")
+debug_color = Color(0.8302898, 0.31866914, 0.59810877, 0.41960785)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(54, 538)
+script = ExtResource("3_huus3")
+
+[node name="player" type="Sprite2D" parent="player"]
+visible = false
+texture_filter = 1
+texture = SubResource("AtlasTexture_xojfc")
+flip_h = true
+
+[node name="anim" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_mp0j6")
+animation = &"jump"
+frame_progress = 1.0
+
+[node name="jump" type="AudioStreamPlayer" parent="player/anim"]
+stream = ExtResource("6_kj7wh")
+volume_db = -20.0
+pitch_scale = 0.89
+
+[node name="walk" type="AudioStreamPlayer" parent="player/anim"]
+stream = ExtResource("7_jpl81")
+volume_db = 4.704
+pitch_scale = 0.75
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+visible = false
+texture_filter = 1
+position = Vector2(-5, -1)
+shape = SubResource("CapsuleShape2D_15dsx")
+
+[node name="level_back" parent="." instance=ExtResource("4_0tvnm")]
+position = Vector2(5, 215)

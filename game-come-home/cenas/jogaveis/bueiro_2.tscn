@@ -1,0 +1,141 @@
+[gd_scene load_steps=21 format=3 uid="uid://bplci5acquuw0"]
+
+[ext_resource type="Script" uid="uid://48a3dk4lfema" path="res://script/bueiro_2.gd" id="1_1f6s8"]
+[ext_resource type="Texture2D" uid="uid://d3uspdg8q0mt1" path="res://bueiro/bueiro_2.png" id="1_lho2i"]
+[ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="3_ytpiw"]
+[ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="4_5k5o0"]
+[ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="4_6kwea"]
+[ext_resource type="Texture2D" uid="uid://1suoso416goh" path="res://sprites/personagem/personagem_normal.png" id="5_165do"]
+[ext_resource type="AudioStream" uid="uid://mf4jevctgwaq" path="res://songs/jump_sfx.wav" id="6_are1w"]
+[ext_resource type="AudioStream" uid="uid://dtrescpryitoi" path="res://songs/walking_sfx.mp3" id="7_nphtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4t2w"]
+size = Vector2(1149, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f6s8"]
+size = Vector2(19.5, 558.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojfc"]
+atlas = ExtResource("4_6kwea")
+region = Rect2(146, 519, 72, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0j6"]
+atlas = ExtResource("5_165do")
+region = Rect2(204, 121, 98, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bq56"]
+atlas = ExtResource("5_165do")
+region = Rect2(105, 121, 98, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15dsx"]
+atlas = ExtResource("5_165do")
+region = Rect2(297, 119, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v4ht"]
+atlas = ExtResource("5_165do")
+region = Rect2(99, 0, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y2i1"]
+atlas = ExtResource("4_6kwea")
+region = Rect2(99, 122, 98, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogt8j"]
+atlas = ExtResource("5_165do")
+region = Rect2(198, 119, 98, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijvs"]
+atlas = ExtResource("5_165do")
+region = Rect2(198, 0, 98, 119)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp0j6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp0j6")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_8bq56")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15dsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v4ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y2i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogt8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijvs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15dsx"]
+radius = 21.0
+height = 106.0
+
+[node name="bueiro2" type="Node2D"]
+script = ExtResource("1_1f6s8")
+
+[node name="bg" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+texture_filter = 1
+position = Vector2(575.25, 326.5)
+scale = Vector2(11.535, 12.899999)
+texture = ExtResource("1_lho2i")
+
+[node name="chao" type="CollisionShape2D" parent="bg"]
+position = Vector2(574.5, 626)
+shape = SubResource("RectangleShape2D_a4t2w")
+
+[node name="parede" type="CollisionShape2D" parent="bg"]
+position = Vector2(1147, 308)
+shape = SubResource("RectangleShape2D_1f6s8")
+
+[node name="player" type="CharacterBody2D" parent="."]
+texture_filter = 1
+position = Vector2(1104, 549)
+script = ExtResource("3_ytpiw")
+
+[node name="player" type="Sprite2D" parent="player"]
+visible = false
+texture_filter = 1
+texture = SubResource("AtlasTexture_xojfc")
+
+[node name="anim" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_mp0j6")
+animation = &"jump"
+frame_progress = 1.0
+flip_h = true
+
+[node name="jump" type="AudioStreamPlayer" parent="player/anim"]
+stream = ExtResource("6_are1w")
+volume_db = -20.0
+pitch_scale = 0.89
+
+[node name="walk" type="AudioStreamPlayer" parent="player/anim"]
+stream = ExtResource("7_nphtt")
+volume_db = 4.704
+pitch_scale = 0.75
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+visible = false
+texture_filter = 1
+position = Vector2(-5, -1)
+shape = SubResource("CapsuleShape2D_15dsx")
+
+[node name="level_end" parent="." instance=ExtResource("4_5k5o0")]
+position = Vector2(5, 304)
+next_level = "bueiro_3"

@@ -92,12 +92,12 @@ frame_progress = 1.0
 
 [node name="jump" type="AudioStreamPlayer" parent="anim"]
 stream = ExtResource("4_xojfc")
-volume_db = -25.071
+volume_db = -20.0
 pitch_scale = 0.89
 
 [node name="walk" type="AudioStreamPlayer" parent="anim"]
 stream = ExtResource("5_15dsx")
-volume_db = -6.071
+volume_db = 4.704
 pitch_scale = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

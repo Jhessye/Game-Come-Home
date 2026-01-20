@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfi2s0w4a2xgx"]
+
+[ext_resource type="Texture2D" uid="uid://cc5qgj5icaukj" path="res://bueiro/bueiro_1.png" id="1_crkup"]
+[ext_resource type="Script" uid="uid://dlyvrp37yha0b" path="res://script/bueiro_1.gd" id="1_w4tww"]
+[ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="2_t06o1"]
+[ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_pitdx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crkup"]
+size = Vector2(1149, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t06o1"]
+size = Vector2(19.5, 558.5)
+
+[node name="bueiro" type="Node2D"]
+script = ExtResource("1_w4tww")
+
+[node name="bg" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+texture_filter = 1
+position = Vector2(575.25, 326.5)
+scale = Vector2(11.535, 12.899999)
+texture = ExtResource("1_crkup")
+
+[node name="chao" type="CollisionShape2D" parent="bg"]
+position = Vector2(574.5, 626)
+shape = SubResource("RectangleShape2D_crkup")
+
+[node name="parede" type="CollisionShape2D" parent="bg"]
+position = Vector2(1147, 308)
+shape = SubResource("RectangleShape2D_t06o1")
+
+[node name="player" parent="." instance=ExtResource("2_t06o1")]
+position = Vector2(926, 96)
+
+[node name="level_end" parent="." instance=ExtResource("3_pitdx")]
+position = Vector2(5, 293)
+next_level = "bueiro_2"

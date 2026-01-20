@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfba58pnllrjt"]
+
+[ext_resource type="Script" uid="uid://26m17u0ctw3" path="res://script/song_bg.gd" id="1_ckoex"]
+
+[node name="bg" type="AudioStreamPlayer"]
+script = ExtResource("1_ckoex")

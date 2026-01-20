@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba1wspoh0rq1s"]
+
+[ext_resource type="Script" uid="uid://di6yrf6nxsmrv" path="res://script/cena_3.gd" id="1_1ypn3"]
+[ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/fundo.tscn" id="1_v26xe"]
+[ext_resource type="Texture2D" uid="uid://cnb8u1doion0k" path="res://floresta/bueiro.png" id="2_3inht"]
+[ext_resource type="Script" uid="uid://bp4vcctn4uu8v" path="res://script/entrar_bueiro.gd" id="3_45mus"]
+[ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="4_fw20r"]
+[ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="4_tjbar"]
+[ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="5_fw20r"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1ypn3"]
+a = Vector2(475, 130)
+b = Vector2(394, 130)
+
+[node name="cena_3" type="Node2D"]
+script = ExtResource("1_1ypn3")
+
+[node name="floresta_1" parent="." instance=ExtResource("1_v26xe")]
+
+[node name="Area2D" type="Area2D" parent="floresta_1"]
+script = ExtResource("3_45mus")
+
+[node name="bueiro" type="Sprite2D" parent="floresta_1/Area2D"]
+texture_filter = 1
+position = Vector2(769, 527)
+scale = Vector2(5.67, 4.14)
+texture = ExtResource("2_3inht")
+
+[node name="bueiro2" type="CollisionShape2D" parent="floresta_1/Area2D"]
+position = Vector2(279, 397)
+shape = SubResource("SegmentShape2D_1ypn3")
+
+[node name="Label" type="Label" parent="floresta_1/Area2D"]
+offset_left = 667.0
+offset_top = 355.0
+offset_right = 761.0
+offset_bottom = 399.0
+theme = ExtResource("4_tjbar")
+
+[node name="player" parent="." instance=ExtResource("4_fw20r")]
+position = Vector2(51, 516)
+
+[node name="level_end" parent="." instance=ExtResource("5_fw20r")]
+position = Vector2(1154, 259)
+next_level = "cena_4"
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="default" type="Node2D" parent="SpawnPoints"]
+position = Vector2(34, 493)
+
+[node name="voltar_caverna" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1068, 498)
+
+[connection signal="body_entered" from="floresta_1/Area2D" to="floresta_1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="floresta_1/Area2D" to="floresta_1/Area2D" method="_on_body_exited"]
