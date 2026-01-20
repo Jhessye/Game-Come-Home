@@ -3,13 +3,15 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalAudioStreamPlayer.stop()
+	SongBg.stop()
 	pass # Replace with function body.
 
-func _can_drop_data(position, data):
+func _can_drop_data(_position, data):
 	return data.has("item_data")
 
 
-func _drop_data(position, data):
+func _drop_data(_position, data):
 	var item = data.item_data
 	var slot = data.get("from_slot")
 
@@ -26,7 +28,7 @@ func _drop_data(position, data):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_check_button_mouse_entered() -> void:

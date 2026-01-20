@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1jgrt1il3de0"]
+
+[ext_resource type="Script" uid="uid://ddky67w3x0gml" path="res://script/level_back.gd" id="1_h5e0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgmi4"]
+size = Vector2(17, 442.5)
+
+[node name="level_back" type="Area2D"]
+script = ExtResource("1_h5e0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 119.75)
+shape = SubResource("RectangleShape2D_sgmi4")
+debug_color = Color(0.94147766, 7.9897045e-06, 0.61261934, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
