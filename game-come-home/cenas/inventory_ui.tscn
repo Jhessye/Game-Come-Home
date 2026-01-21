@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://1d4n2grd4xux"]
+
+[ext_resource type="Texture2D" uid="uid://br7drgc44gxel" path="res://home_1/caixinha.png" id="1_rbla3"]
+[ext_resource type="Script" uid="uid://bv0htd5wkwfb2" path="res://script/quarto/caixinha.gd" id="2_xgsy3"]
+[ext_resource type="Script" uid="uid://ceudml0af5ie2" path="res://script/quarto/slot.gd" id="3_gnfyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24e4"]
+atlas = ExtResource("1_rbla3")
+region = Rect2(513, 741, 589, 171)
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="caixinha" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 386.0
+offset_top = 523.0
+offset_right = -377.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = SubResource("AtlasTexture_w24e4")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_xgsy3")
+
+[node name="GridContainer" type="GridContainer" parent="caixinha"]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 364.0
+offset_bottom = 97.0
+mouse_filter = 0
+columns = 3
+
+[node name="slot" type="TextureRect" parent="caixinha/GridContainer"]
+custom_minimum_size = Vector2(120, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_gnfyr")
+
+[node name="slot2" type="TextureRect" parent="caixinha/GridContainer"]
+custom_minimum_size = Vector2(100, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_gnfyr")
+
+[node name="slot3" type="TextureRect" parent="caixinha/GridContainer"]
+custom_minimum_size = Vector2(100, 95)
+layout_mode = 2
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_gnfyr")

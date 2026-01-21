@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://2nf48m8u6n5d"]
+[gd_scene load_steps=26 format=3 uid="uid://2nf48m8u6n5d"]
 
 [ext_resource type="Script" uid="uid://d02x5v7lxe3pp" path="res://script/quarto/mundo_1.gd" id="1_bkwge"]
 [ext_resource type="Texture2D" uid="uid://ckqafa4gqaybe" path="res://home_1/bg.png" id="2_bni7i"]
@@ -10,10 +10,8 @@
 [ext_resource type="Script" uid="uid://br2iwao5mfu3x" path="res://script/quarto/objetos.gd" id="8_mwmhf"]
 [ext_resource type="Texture2D" uid="uid://b76yfncmg10gy" path="res://home_1/escudo.png" id="9_74268"]
 [ext_resource type="Texture2D" uid="uid://c3mr8vtq8p3kl" path="res://home_1/mapa.png" id="10_eek3e"]
-[ext_resource type="Texture2D" uid="uid://br7drgc44gxel" path="res://home_1/caixinha.png" id="11_xou0k"]
-[ext_resource type="Script" uid="uid://bv0htd5wkwfb2" path="res://script/quarto/caixinha.gd" id="12_r5wke"]
-[ext_resource type="Script" uid="uid://ceudml0af5ie2" path="res://script/quarto/slot.gd" id="13_mbgqh"]
 [ext_resource type="AudioStream" uid="uid://dn6hq3r46sxoe" path="res://songs/song_cen1.mp3" id="14_r402l"]
+[ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="15_fxcnq"]
 [ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="15_x6gb1"]
 [ext_resource type="Script" uid="uid://buoolib4rsym4" path="res://script/botoes/check_button.gd" id="16_y2qun"]
 [ext_resource type="AudioStream" uid="uid://bihx7jlyvdbj5" path="res://songs/button_sfx.mp3" id="17_2ega1"]
@@ -29,10 +27,6 @@ region = Rect2(115, 37, 347, 351)
 [sub_resource type="AtlasTexture" id="AtlasTexture_krbay"]
 atlas = ExtResource("10_eek3e")
 region = Rect2(400, 300, 650, 1150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p5jvc"]
-atlas = ExtResource("11_xou0k")
-region = Rect2(513, 741, 589, 171)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ldqw"]
 bg_color = Color(0, 0.3137255, 0.19607843, 1)
@@ -140,7 +134,11 @@ size_flags_vertical = 4
 texture = ExtResource("6_mxqik")
 expand_mode = 1
 
+[node name="InventoryUI" parent="." instance=ExtResource("15_fxcnq")]
+layout_mode = 1
+
 [node name="espada" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,6 +152,7 @@ grow_vertical = 2
 rotation = -0.76096356
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 mouse_default_cursor_shape = 2
 accessibility_name = "espada"
 texture = SubResource("AtlasTexture_mh40o")
@@ -163,6 +162,7 @@ script = ExtResource("8_mwmhf")
 item_id = "espada"
 
 [node name="escudo" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,6 +175,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 mouse_default_cursor_shape = 2
 accessibility_name = "escudo"
 texture = SubResource("AtlasTexture_3ldqw")
@@ -184,6 +185,7 @@ script = ExtResource("8_mwmhf")
 item_id = "escudo"
 
 [node name="mapá" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,6 +199,7 @@ grow_vertical = 2
 rotation = 1.1938052
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 0
 mouse_default_cursor_shape = 2
 accessibility_name = "mapa"
 texture = SubResource("AtlasTexture_krbay")
@@ -205,59 +208,6 @@ stretch_mode = 5
 flip_h = true
 script = ExtResource("8_mwmhf")
 item_id = "mapa"
-
-[node name="caixinha" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 386.0
-offset_top = 523.0
-offset_right = -377.0
-offset_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_p5jvc")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("12_r5wke")
-
-[node name="GridContainer" type="GridContainer" parent="caixinha"]
-layout_mode = 0
-offset_left = 21.0
-offset_right = 364.0
-offset_bottom = 97.0
-columns = 3
-
-[node name="slot" type="TextureRect" parent="caixinha/GridContainer"]
-custom_minimum_size = Vector2(120, 95)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("13_mbgqh")
-
-[node name="slot2" type="TextureRect" parent="caixinha/GridContainer"]
-custom_minimum_size = Vector2(100, 95)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 0
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("13_mbgqh")
-
-[node name="slot3" type="TextureRect" parent="caixinha/GridContainer"]
-custom_minimum_size = Vector2(100, 95)
-layout_mode = 2
-mouse_filter = 0
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("13_mbgqh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_r402l")
