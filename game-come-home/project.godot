@@ -20,6 +20,8 @@ GlobalAudioStreamPlayer="*res://cenas/tela inicial/audio_stream_player.tscn"
 SongBg="*res://cenas/floresta/song_bg.tscn"
 LevelBack="*res://cenas/level_back.tscn"
 GameState="*res://cenas/game_state.tscn"
+Inventory="*res://cenas/Inventory.tscn"
+ItemDB="*res://cenas/item_db.tscn"
 
 [display]
 
