@@ -1,18 +1,25 @@
+# SimpleInventory.gd (Autoload - configure EM 1 MINUTO)
 extends Node
 
-const SLOT_COUNT := 3
-
-var slots := []
+var items = []
 
 func _ready():
-	slots.resize(SLOT_COUNT)
-	slots.fill(null)
+	items.resize(3)
+	print("🎒 Inventário simples iniciado")
 
-func set_item(slot: int, item_id: String):
-	slots[slot] = item_id
+func add_item(item_id: String):
+	for i in range(3):
+		if items[i] == null:
+			items[i] = item_id
+			print("➕ Item adicionado: ", item_id)
+			return i
+	print("❌ Inventário cheio!")
+	return -1
 
-func get_item(slot: int):
-	return slots[slot]
-
-func clear_slot(slot: int):
-	slots[slot] = null
+func remove_item(slot: int):
+	if slot >= 0 and slot < 3:
+		var item = items[slot]
+		items[slot] = null
+		print("➖ Item removido: ", item)
+		return item
+	return null

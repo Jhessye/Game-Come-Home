@@ -12,7 +12,7 @@ func _ready():
 	countdown_label.text = ""
 
 
-func _toggled(button_pressed: bool) -> void:
+func _toggled(_button_pressed: bool) -> void:
 	if button_pressed:
 		start_transition()
 	else:
