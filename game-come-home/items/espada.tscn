@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdnotovbrlvl1"]
+
+[ext_resource type="Texture2D" uid="uid://cvkhfrkgf7maj" path="res://home_1/espada.png" id="1_y58p7"]
+[ext_resource type="Script" uid="uid://fd6af8fugatl" path="res://script/logic/world_item.gd" id="2_6pevm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f07ex"]
+size = Vector2(20, 154.86676)
+
+[node name="espada" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_6pevm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(91.928185, 340.00513)
+rotation = -0.655332
+scale = Vector2(0.35128924, 0.35945383)
+texture = ExtResource("1_y58p7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(89, 338)
+rotation = -0.6570658
+shape = SubResource("RectangleShape2D_f07ex")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_input_event"]

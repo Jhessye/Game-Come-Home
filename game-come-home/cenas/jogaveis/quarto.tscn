@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjba10bhwb65w"]
+
+[ext_resource type="Script" uid="uid://b3lbf4bwa1y2p" path="res://script/cenas/quarto.gd" id="1_vpxto"]
+[ext_resource type="Texture2D" uid="uid://ckqafa4gqaybe" path="res://home_1/bg.png" id="2_bni7i"]
+[ext_resource type="Texture2D" uid="uid://bv81jt1u75ewb" path="res://home_1/movel.png" id="3_tktcg"]
+[ext_resource type="Texture2D" uid="uid://d0lu35hits38" path="res://home_1/mesa.png" id="4_jicya"]
+[ext_resource type="Texture2D" uid="uid://cglofuytxcmq0" path="res://home_1/cama.png" id="5_42vj1"]
+[ext_resource type="Texture2D" uid="uid://cnhhvhajs2b3e" path="res://homepg/boneco_1.png" id="6_mxqik"]
+[ext_resource type="PackedScene" uid="uid://be14fw86q2nwh" path="res://items/mapa.tscn" id="6_qu5co"]
+[ext_resource type="PackedScene" uid="uid://dj8axlms4i5an" path="res://items/escudo.tscn" id="7_mimx8"]
+[ext_resource type="PackedScene" uid="uid://cdnotovbrlvl1" path="res://items/espada.tscn" id="8_hy3b0"]
+[ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="9_mimx8"]
+[ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="11_e8ev6"]
+[ext_resource type="AudioStream" uid="uid://dn6hq3r46sxoe" path="res://songs/song_cen1.mp3" id="14_r402l"]
+[ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="15_x6gb1"]
+
+[node name="quarto" type="Node2D"]
+script = ExtResource("1_vpxto")
+
+[node name="img_bk" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Sprite2D" parent="img_bk"]
+position = Vector2(577.5, 324.75)
+scale = Vector2(0.7236842, 0.68473685)
+texture = ExtResource("2_bni7i")
+
+[node name="cama" type="Sprite2D" parent="img_bk"]
+position = Vector2(578.75, 323.75)
+scale = Vector2(0.72086465, 0.68473685)
+texture = ExtResource("5_42vj1")
+
+[node name="mesa" type="Sprite2D" parent="img_bk"]
+position = Vector2(578.75, 323.75)
+scale = Vector2(0.72086465, 0.68473685)
+texture = ExtResource("4_jicya")
+
+[node name="movel" type="Sprite2D" parent="img_bk"]
+position = Vector2(578.75, 323.75)
+scale = Vector2(0.72086465, 0.68473685)
+texture = ExtResource("3_tktcg")
+
+[node name="personagem" type="Sprite2D" parent="img_bk"]
+position = Vector2(408, 456)
+scale = Vector2(0.2202381, 0.22569808)
+texture = ExtResource("6_mxqik")
+
+[node name="auxiliar" type="Label" parent="."]
+offset_left = 83.0
+offset_top = 94.0
+offset_right = 803.0
+offset_bottom = 133.0
+theme = ExtResource("15_x6gb1")
+text = "CLIQUE NOS OBJETOS ESCOLHIDOS PARA LEVAR NA VIAJEM!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("9_mimx8")]
+anchor_left = 0.36024305
+anchor_top = 0.78858024
+anchor_right = 0.6553819
+anchor_bottom = 0.9382716
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="pronto" type="Button" parent="."]
+offset_left = 947.0
+offset_top = 62.0
+offset_right = 1120.0
+offset_bottom = 123.0
+theme = ExtResource("11_e8ev6")
+text = "PRONTO"
+
+[node name="itens" type="Node2D" parent="."]
+
+[node name="escudo" parent="itens" instance=ExtResource("7_mimx8")]
+position = Vector2(236, -10)
+
+[node name="mapa" parent="itens" instance=ExtResource("6_qu5co")]
+position = Vector2(53.000004, 280)
+rotation = 0.1653527
+scale = Vector2(0.2, 0.2)
+
+[node name="espada" parent="itens" instance=ExtResource("8_hy3b0")]
+position = Vector2(884, 210)
+
+[node name="song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_r402l")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="pronto" to="." method="_on_pronto_pressed"]
