@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj8axlms4i5an"]
+
+[ext_resource type="Script" uid="uid://fd6af8fugatl" path="res://script/logic/world_item.gd" id="1_8rcqr"]
+[ext_resource type="Texture2D" uid="uid://b76yfncmg10gy" path="res://home_1/escudo.png" id="1_h4n63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqq1q"]
+radius = 68.73446
+
+[node name="escudo" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_8rcqr")
+item_id = "escudo"
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(78, 312)
+rotation = 0.0022908703
+scale = Vector2(0.4002806, 0.39619744)
+texture = ExtResource("1_h4n63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(77.99999, 309.99997)
+rotation = -0.5157231
+shape = SubResource("CircleShape2D_hqq1q")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_input_event"]

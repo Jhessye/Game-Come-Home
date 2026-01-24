@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-
 const level_music = preload("res://songs/song_bg.mp3")
 
 func _play_music(music: AudioStream, volume = -20.0):

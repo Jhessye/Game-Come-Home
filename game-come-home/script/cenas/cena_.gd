@@ -6,7 +6,7 @@ func _ready() -> void:
 	GlobalAudioStreamPlayer.stop()
 	SongBg.play_music_level()
 	# 1. Carrega inventário
-	Inventory.load_inventory()
+	Inventory.load()
 	
 	# 2. Atualiza slots (se houver slots na cena)
 	update_slots_in_scene()

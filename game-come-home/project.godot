@@ -18,10 +18,10 @@ config/features=PackedStringArray("4.5", "Mobile")
 
 GlobalAudioStreamPlayer="*res://cenas/tela inicial/audio_stream_player.tscn"
 SongBg="*res://cenas/floresta/song_bg.tscn"
-LevelBack="*res://cenas/level_back.tscn"
-GameState="*res://cenas/game_state.tscn"
-ItemDB="*res://cenas/item_db.tscn"
-Inventory="*res://script/Inventory.gd"
+GameState="*res://script/logic/GameState.gd"
+Inventory="*res://script/logic/Inventory.gd"
+ItemDB="*res://script/logic/ItemDB.gd"
+LevelBack="*res://script/logic/level_back.gd"
 
 [display]
 
@@ -31,6 +31,7 @@ window/stretch/mode="canvas_items"
 
 collectible=""
 inventory_slot=""
+inventory_ui=""
 
 [input]
 
