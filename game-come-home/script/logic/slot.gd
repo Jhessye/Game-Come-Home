@@ -1,6 +1,7 @@
 extends TextureButton
 
 @export var item_id := ""
+@onready var highlight: TextureRect = $Highlight
 
 func _ready():
 	ignore_texture_size = true
@@ -18,16 +19,22 @@ func set_item(new_item_id: String):
 func clear():
 	item_id = ""
 	texture_normal = null
+	set_selected(false)
+	
+func set_selected(selected: bool):
+	highlight.visible = selected
 
 
 func _on_pressed() -> void:
+	if not Inventory.allow_interaction:
+		return
+
 	if item_id == "":
 		return
 	
 	var world_pos := Inventory.remove_item(item_id)
 	spawn_item(world_pos)
 	clear()
-
 
 func spawn_item(world_pos: Vector2):
 	var path := "res://items/%s.tscn" % item_id
