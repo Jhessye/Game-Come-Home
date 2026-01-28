@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Inventory.allow_interaction = true
+
 	GlobalAudioStreamPlayer.stop()
 	SongBg.play_music_level()
 	# 1. Carrega inventário

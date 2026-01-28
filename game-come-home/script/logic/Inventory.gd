@@ -1,5 +1,7 @@
 extends Node
 
+var allow_interaction := false
+
 var items := {}  
 # id -> posição no mundo
 

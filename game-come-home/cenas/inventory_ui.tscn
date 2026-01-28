@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1d4n2grd4xux"]
+[gd_scene load_steps=5 format=3 uid="uid://1d4n2grd4xux"]
 
 [ext_resource type="Texture2D" uid="uid://br7drgc44gxel" path="res://home_1/caixinha.png" id="1_rbla3"]
 [ext_resource type="Script" uid="uid://cgl3qhlo0cbc6" path="res://script/logic/inventory_ui.gd" id="1_xgsy3"]
 [ext_resource type="Script" uid="uid://y8qwcutgsric" path="res://script/logic/slot.gd" id="2_n2o6a"]
+[ext_resource type="Texture2D" uid="uid://darx7jiyhcmwd" path="res://home_1/selecinar_caixinha.png" id="4_xgsy3"]
 
 [node name="InventoryUI" type="Control" groups=["inventory_ui"]]
 layout_mode = 3
@@ -45,23 +46,61 @@ theme_override_constants/separation = 3
 [node name="slot" type="TextureButton" parent="GridContainer" groups=["inventory_slot"]]
 custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 stretch_mode = 5
 script = ExtResource("2_n2o6a")
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/slot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_xgsy3")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="slot2" type="TextureButton" parent="GridContainer" groups=["inventory_slot"]]
 custom_minimum_size = Vector2(140, 80)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 stretch_mode = 5
 script = ExtResource("2_n2o6a")
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/slot2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_xgsy3")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="slot3" type="TextureButton" parent="GridContainer" groups=["inventory_slot"]]
 custom_minimum_size = Vector2(120, 80)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 stretch_mode = 5
 script = ExtResource("2_n2o6a")
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/slot3"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_xgsy3")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="GridContainer/slot" to="GridContainer/slot" method="_on_pressed"]
 [connection signal="pressed" from="GridContainer/slot2" to="GridContainer/slot2" method="_on_pressed"]

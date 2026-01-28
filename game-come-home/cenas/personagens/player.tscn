@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://broas741jll66"]
+[gd_scene load_steps=33 format=3 uid="uid://broas741jll66"]
 
 [ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="2_kthid"]
@@ -11,6 +11,10 @@
 atlas = ExtResource("2_kthid")
 region = Rect2(146, 519, 72, 112)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvxu2"]
+atlas = ExtResource("3_kthid")
+region = Rect2(16, 258, 94, 129)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_klwes"]
 atlas = ExtResource("2_kthid")
 region = Rect2(133, 384, 133, 128)
@@ -18,10 +22,6 @@ region = Rect2(133, 384, 133, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdgkj"]
 atlas = ExtResource("2_kthid")
 region = Rect2(141, 258, 141, 129)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvxu2"]
-atlas = ExtResource("3_kthid")
-region = Rect2(16, 258, 94, 129)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t68h5"]
 atlas = ExtResource("2_kthid")
@@ -38,6 +38,10 @@ region = Rect2(132, 512, 131, 118)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tf48r"]
 atlas = ExtResource("3_lvxu2")
 region = Rect2(2, 388, 132, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl2x5"]
+atlas = ExtResource("2_kthid")
+region = Rect2(125, 514, 125, 118)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpp07"]
 atlas = ExtResource("3_lvxu2")
@@ -103,22 +107,22 @@ region = Rect2(19, 258, 110, 129)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lvxu2")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_klwes")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qdgkj")
 }],
 "loop": false,
-"name": &"attack_sword ",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lvxu2")
-}],
-"loop": false,
-"name": &"attak",
-"speed": 5.0
+"name": &"attack_sword",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -139,15 +143,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_tf48r")
 }],
 "loop": false,
-"name": &"defend_shield  ",
+"name": &"defend_shield",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl2x5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vpp07")
 }],
 "loop": false,
-"name": &"idle_shield ",
+"name": &"idle_shield",
 "speed": 5.0
 }, {
 "frames": [{
@@ -174,7 +186,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bksy1")
 }],
 "loop": false,
-"name": &"jump_shield ",
+"name": &"jump_shield",
 "speed": 5.0
 }, {
 "frames": [{
@@ -182,7 +194,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f23sa")
 }],
 "loop": false,
-"name": &"jump_sword ",
+"name": &"jump_sword",
 "speed": 5.0
 }, {
 "frames": [{
@@ -213,7 +225,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7vu86")
 }],
 "loop": true,
-"name": &"walk_shield ",
+"name": &"walk_shield",
 "speed": 3.0
 }, {
 "frames": [{
@@ -224,7 +236,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3af3i")
 }],
 "loop": true,
-"name": &"walk_sword ",
+"name": &"walk_sword",
 "speed": 3.0
 }]
 
@@ -243,8 +255,7 @@ flip_h = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mp0j6")
-animation = &"attack_sword "
-flip_h = true
+animation = &"attack_sword"
 
 [node name="jump" type="AudioStreamPlayer" parent="anim"]
 stream = ExtResource("4_xojfc")
@@ -261,3 +272,5 @@ visible = false
 texture_filter = 1
 position = Vector2(-5, -1)
 shape = SubResource("CapsuleShape2D_15dsx")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
