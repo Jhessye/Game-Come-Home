@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba1wspoh0rq1s"]
+[gd_scene load_steps=10 format=3 uid="uid://ba1wspoh0rq1s"]
 
-[ext_resource type="Script" uid="uid://di6yrf6nxsmrv" path="res://script/cena_3.gd" id="1_1ypn3"]
+[ext_resource type="Script" uid="uid://di6yrf6nxsmrv" path="res://script/cenas/cena_3.gd" id="1_1ypn3"]
 [ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/fundo.tscn" id="1_v26xe"]
 [ext_resource type="Texture2D" uid="uid://cnb8u1doion0k" path="res://floresta/bueiro.png" id="2_3inht"]
-[ext_resource type="Script" uid="uid://bp4vcctn4uu8v" path="res://script/entrar_bueiro.gd" id="3_45mus"]
+[ext_resource type="Script" uid="uid://bp4vcctn4uu8v" path="res://script/cenas/entrar_bueiro.gd" id="3_45mus"]
 [ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="4_fw20r"]
 [ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="4_tjbar"]
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="5_fw20r"]
+[ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="8_wblxh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1ypn3"]
 a = Vector2(475, 130)
@@ -51,6 +52,19 @@ position = Vector2(34, 493)
 
 [node name="voltar_caverna" type="Node2D" parent="SpawnPoints"]
 position = Vector2(1068, 498)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("8_wblxh")]
+anchor_left = 0.36631945
+anchor_top = 0.032407407
+anchor_right = 0.6458333
+anchor_bottom = 0.16512346
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="floresta_1/Area2D" to="floresta_1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="floresta_1/Area2D" to="floresta_1/Area2D" method="_on_body_exited"]

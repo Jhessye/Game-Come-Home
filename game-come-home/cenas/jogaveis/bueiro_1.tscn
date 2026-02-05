@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfi2s0w4a2xgx"]
+[gd_scene load_steps=8 format=3 uid="uid://dfi2s0w4a2xgx"]
 
 [ext_resource type="Texture2D" uid="uid://cc5qgj5icaukj" path="res://bueiro/bueiro_1.png" id="1_crkup"]
-[ext_resource type="Script" uid="uid://dlyvrp37yha0b" path="res://script/bueiro_1.gd" id="1_w4tww"]
+[ext_resource type="Script" uid="uid://dlyvrp37yha0b" path="res://script/cenas/bueiro_1.gd" id="1_w4tww"]
 [ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="2_t06o1"]
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_pitdx"]
+[ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="5_cgruf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crkup"]
 size = Vector2(1149, 37)
@@ -36,3 +37,16 @@ position = Vector2(926, 96)
 [node name="level_end" parent="." instance=ExtResource("3_pitdx")]
 position = Vector2(5, 293)
 next_level = "bueiro_2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("5_cgruf")]
+anchor_left = 0.36631945
+anchor_top = 0.032407407
+anchor_right = 0.6458333
+anchor_bottom = 0.16512346
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
