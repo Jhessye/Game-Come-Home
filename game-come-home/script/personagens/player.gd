@@ -274,3 +274,9 @@ func _on_anim_animation_finished() -> void:
 	if physical_state in [PhysicalState.ATTACK, PhysicalState.DEFEND]:
 		physical_state = PhysicalState.IDLE
 		print("Animação de ataque/defesa terminou")
+
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if velocity.y > 0:
+		area.get_parent().

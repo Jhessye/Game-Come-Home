@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddbcwxsin628n"]
+[gd_scene load_steps=7 format=3 uid="uid://ddbcwxsin628n"]
 
 [ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/fundo.tscn" id="1_2dkdh"]
 [ext_resource type="Script" uid="uid://bdohp1auuygal" path="res://script/cenas/cena_.gd" id="1_cwtp3"]
 [ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="2_cwtp3"]
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_lw6dr"]
+[ext_resource type="PackedScene" uid="uid://dppbh5bp1mm16" path="res://cenas/personagens/terra.tscn" id="4_iok8k"]
 [ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="5_lw6dr"]
 
 [node name="cena_" type="Node2D"]
@@ -13,6 +14,10 @@ script = ExtResource("1_cwtp3")
 
 [node name="player" parent="." instance=ExtResource("2_cwtp3")]
 position = Vector2(92, 512)
+
+[node name="terra" parent="." instance=ExtResource("4_iok8k")]
+position = Vector2(886, 325)
+scale = Vector2(0.48493838, 0.46361592)
 
 [node name="level_end" parent="." instance=ExtResource("3_lw6dr")]
 position = Vector2(1151, 257)
