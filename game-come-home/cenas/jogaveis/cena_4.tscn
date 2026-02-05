@@ -1,13 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqn5h040fmpka"]
+[gd_scene load_steps=22 format=3 uid="uid://bqn5h040fmpka"]
 
 [ext_resource type="Texture2D" uid="uid://dfsnxyxiu4u08" path="res://floresta/fundo_caverna.png" id="1_0vxkh"]
-[ext_resource type="Script" uid="uid://b11g80inmrnn8" path="res://script/cena_4.gd" id="1_natfk"]
+[ext_resource type="Script" uid="uid://b11g80inmrnn8" path="res://script/cenas/cena_4.gd" id="1_natfk"]
 [ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="3_huus3"]
 [ext_resource type="PackedScene" uid="uid://c1jgrt1il3de0" path="res://cenas/level_back.tscn" id="4_0tvnm"]
 [ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="4_006iw"]
 [ext_resource type="Texture2D" uid="uid://1suoso416goh" path="res://sprites/personagem/personagem_normal.png" id="5_p7lm0"]
 [ext_resource type="AudioStream" uid="uid://mf4jevctgwaq" path="res://songs/jump_sfx.wav" id="6_kj7wh"]
 [ext_resource type="AudioStream" uid="uid://dtrescpryitoi" path="res://songs/walking_sfx.mp3" id="7_jpl81"]
+[ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="9_006iw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crkup"]
 size = Vector2(1150.5, 58)
@@ -138,3 +139,16 @@ shape = SubResource("CapsuleShape2D_15dsx")
 
 [node name="level_back" parent="." instance=ExtResource("4_0tvnm")]
 position = Vector2(5, 215)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("9_006iw")]
+anchor_left = 0.36631945
+anchor_top = 0.032407407
+anchor_right = 0.6458333
+anchor_bottom = 0.16512346
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
