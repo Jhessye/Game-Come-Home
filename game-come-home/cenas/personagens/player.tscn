@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://broas741jll66"]
+[gd_scene load_steps=34 format=3 uid="uid://broas741jll66"]
 
 [ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="2_kthid"]
@@ -244,16 +244,20 @@ animations = [{
 radius = 21.0
 height = 106.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvxu2"]
+radius = 24.0
+height = 88.0
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_unwft")
 
 [node name="player" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = SubResource("AtlasTexture_xojfc")
 flip_h = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_mp0j6")
 animation = &"attack_sword"
 
@@ -268,9 +272,15 @@ volume_db = 4.704
 pitch_scale = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(-5, -1)
 shape = SubResource("CapsuleShape2D_15dsx")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-6, 1)
+shape = SubResource("CapsuleShape2D_lvxu2")
+debug_color = Color(0.9946379, 0, 0.22626597, 0.41960785)
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
