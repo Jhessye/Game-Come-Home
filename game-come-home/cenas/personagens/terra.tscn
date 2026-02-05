@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dppbh5bp1mm16"]
+[gd_scene load_steps=70 format=3 uid="uid://dppbh5bp1mm16"]
 
 [ext_resource type="Texture2D" uid="uid://cwa026v2rp3jh" path="res://sprites/enimes/Terra/PNG/PNG Sequences/Idle/0_Golem_Idle_001.png" id="1_24o6y"]
 [ext_resource type="Script" uid="uid://ckv25cmumqxo4" path="res://script/personagens/terra.gd" id="1_lbmsx"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://d2y6rich3odtt" path="res://sprites/enimes/Terra/PNG/PNG Sequences/Walking/0_Golem_Walking_021.png" id="63_61wha"]
 [ext_resource type="Texture2D" uid="uid://duyng0dt6kpul" path="res://sprites/enimes/Terra/PNG/PNG Sequences/Walking/0_Golem_Walking_022.png" id="64_feov1"]
 [ext_resource type="Texture2D" uid="uid://dkvvssnv8cg5y" path="res://sprites/enimes/Terra/PNG/PNG Sequences/Walking/0_Golem_Walking_023.png" id="65_yb3b6"]
+[ext_resource type="Script" uid="uid://b81l1cvufe7h3" path="res://script/personagens/hitbox.gd" id="66_hb0qn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lbmsx"]
 animations = [{
@@ -309,7 +310,10 @@ frame_progress = 1.0
 shape = SubResource("CapsuleShape2D_qbpwy")
 
 [node name="hitbox" type="Area2D" parent="."]
+script = ExtResource("66_hb0qn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CapsuleShape2D_h2xnp")
 debug_color = Color(0.8423371, 0, 0.11594842, 0.41960785)
+
+[connection signal="area_entered" from="hitbox" to="hitbox" method="_on_body_entered"]

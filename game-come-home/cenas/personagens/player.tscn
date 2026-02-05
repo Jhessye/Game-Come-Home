@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://broas741jll66"]
+[gd_scene load_steps=35 format=3 uid="uid://broas741jll66"]
 
 [ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="2_kthid"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brqdnkm1jc8he" path="res://sprites/personagem/personagem_escudo_soco.png" id="3_lvxu2"]
 [ext_resource type="AudioStream" uid="uid://mf4jevctgwaq" path="res://songs/jump_sfx.wav" id="4_xojfc"]
 [ext_resource type="AudioStream" uid="uid://dtrescpryitoi" path="res://songs/walking_sfx.mp3" id="5_15dsx"]
+[ext_resource type="Script" uid="uid://k3abd0616c0f" path="res://script/personagens/hitbox_player.gd" id="7_t68h5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xojfc"]
 atlas = ExtResource("2_kthid")
@@ -277,6 +278,7 @@ position = Vector2(-5, -1)
 shape = SubResource("CapsuleShape2D_15dsx")
 
 [node name="hitbox" type="Area2D" parent="."]
+script = ExtResource("7_t68h5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-6, 1)
@@ -285,3 +287,4 @@ debug_color = Color(0.9946379, 0, 0.22626597, 0.41960785)
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="hitbox" to="hitbox" method="_on_body_entered"]
