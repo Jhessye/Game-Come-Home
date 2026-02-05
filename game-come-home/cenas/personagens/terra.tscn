@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dppbh5bp1mm16"]
+
+[ext_resource type="Texture2D" uid="uid://cwa026v2rp3jh" path="res://sprites/enimes/Terra/PNG/PNG Sequences/Idle/0_Golem_Idle_001.png" id="1_24o6y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbmsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_24o6y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbpwy"]
+radius = 81.0
+height = 334.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2xnp"]
+radius = 75.0
+height = 304.0
+
+[node name="terra" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.0000305, -16)
+scale = Vector2(0.67333335, 0.6166667)
+sprite_frames = SubResource("SpriteFrames_lbmsx")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qbpwy")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CapsuleShape2D_h2xnp")
+debug_color = Color(0.8423371, 0, 0.11594842, 0.41960785)
