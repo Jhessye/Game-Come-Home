@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://4ix5os8nxx03"]
 
-[ext_resource type="Script" uid="uid://dnyba1l38wc1x" path="res://script/creditos.gd" id="1_kqsen"]
+[ext_resource type="Script" uid="uid://dnyba1l38wc1x" path="res://script/cenas/creditos.gd" id="1_kqsen"]
 [ext_resource type="Texture2D" uid="uid://bqmd0iata7ml" path="res://homepg/fundo_1.png" id="1_rdysq"]
 [ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="2_itarq"]
 [ext_resource type="Script" uid="uid://npe55ms4wark" path="res://script/botoes/button_creditos.gd" id="3_itarq"]
@@ -46,10 +46,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.5
-offset_top = -173.75
-offset_right = 300.5
-offset_bottom = 173.75
+offset_left = -305.75
+offset_top = -195.25
+offset_right = 305.75
+offset_bottom = 195.25
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_wapq7")
@@ -57,7 +57,9 @@ text = "CREDITOS
 
 ARTE DO AMBIENTE, PERSONAGENS PRINCIPAL, DESING GERAL, ESCOLHA MUSICAL, HISTÓRIA : JHESSYE LORRAYNE FRAGA DA SILVA
 
-MUSICA, INIMIGOS, SPRITES, LOGO A ESPADA E ESCUDO: MUUITAS IA"
+MUSICA,  LOGO A ESPADA E ESCUDO: MUUITAS IA.
+
+INIMIGOS, SPRITES : craftpix.net"
 horizontal_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2

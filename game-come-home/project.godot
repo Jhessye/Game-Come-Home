@@ -22,6 +22,7 @@ GameState="*res://script/logic/GameState.gd"
 Inventory="*res://script/logic/Inventory.gd"
 ItemDB="*res://script/logic/ItemDB.gd"
 LevelBack="*res://script/logic/level_back.gd"
+SongBueiro="*res://bueiro/bueiro.tscn"
 
 [display]
 

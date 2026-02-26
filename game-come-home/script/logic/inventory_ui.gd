@@ -50,7 +50,6 @@ func select_slot(index: int):
 
 
 func refresh():
-	print("REFRESH INVENTORY UI")
 
 	for slot in slots:
 		slot.clear()

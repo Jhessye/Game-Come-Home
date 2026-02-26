@@ -214,14 +214,15 @@ func _physics_process(delta: float) -> void:
 	
 	# 🔥 ATAQUE (X)
 	if Input.is_action_just_pressed("attack"):
-		if equipment_state == EquipmentState.SHIELD:
+		if equipment_state == EquipmentState.MAP:
+			$MapOverlay.visible = true   # ajuste o caminho se o nó estiver em outro lugar
+			get_tree().paused = true
+		elif equipment_state == EquipmentState.SHIELD:
 			physical_state = PhysicalState.DEFEND
 		elif equipment_state == EquipmentState.SWORD:
 			physical_state = PhysicalState.ATTACK
 		else:
-			# 🔥 Pode atacar sem equipamento também (se tiver a animação "attack")
 			physical_state = PhysicalState.ATTACK
-	
 	# JUMP
 	elif Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		jump.play()

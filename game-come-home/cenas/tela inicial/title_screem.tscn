@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://idv8oaayck66"]
 
 [ext_resource type="Texture2D" uid="uid://bqmd0iata7ml" path="res://homepg/fundo_1.png" id="1_mfjt0"]
-[ext_resource type="Script" uid="uid://d334s5lb0bghb" path="res://script/title_screem.gd" id="1_tlp47"]
+[ext_resource type="Script" uid="uid://d334s5lb0bghb" path="res://script/cenas/title_screem.gd" id="1_tlp47"]
 [ext_resource type="Texture2D" uid="uid://djk36exotnocj" path="res://homepg/logo.png" id="2_vb8bm"]
 [ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="3_43qb3"]
 [ext_resource type="Script" uid="uid://ci0m7das8v64e" path="res://script/botoes/bnt_start.gd" id="4_kvs6i"]
@@ -171,6 +171,22 @@ volume_db = -20.0
 layout_mode = 2
 texture = ExtResource("5_ani4q")
 expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -563.0
+offset_top = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Linkedin: https://www.linkedin.com/in/jhessye-lorrayne-924733243/
+Github: https://github.com/Jhessye"
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {

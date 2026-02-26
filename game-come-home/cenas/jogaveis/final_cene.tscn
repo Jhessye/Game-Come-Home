@@ -1,3 +1,79 @@
-[gd_scene format=3 uid="uid://chd4bhowg1eb7"]
+[gd_scene load_steps=10 format=3 uid="uid://chd4bhowg1eb7"]
+
+[ext_resource type="Texture2D" uid="uid://cjd14ulx4msla" path="res://cenas/jogaveis/banheiro.png" id="1_kdkji"]
+[ext_resource type="Script" uid="uid://bud0mxvrq4e3a" path="res://script/cenas/final_cene.gd" id="1_sfkss"]
+[ext_resource type="Texture2D" uid="uid://1suoso416goh" path="res://sprites/personagem/personagem_normal.png" id="2_tliaq"]
+[ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="3_tliaq"]
+[ext_resource type="Theme" uid="uid://dlm80snudlv8p" path="res://theme/deful_bnt.tres" id="4_0vroc"]
+[ext_resource type="Script" uid="uid://b8kh7j37l1qos" path="res://script/botoes/button.gd" id="5_sfkss"]
+[ext_resource type="AudioStream" uid="uid://b5gyx3njww7a6" path="res://songs/fim_sound.mp3" id="7_nhn8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifsrj"]
+atlas = ExtResource("2_tliaq")
+region = Rect2(21, 526, 71, 104)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tliaq"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0.39607844, 0.39607844, 0.39607844, 0.18431373)
 
 [node name="banheiro" type="Node2D"]
+script = ExtResource("1_sfkss")
+
+[node name="bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(574, 327)
+scale = Vector2(13.576469, 14.488887)
+texture = ExtResource("1_kdkji")
+
+[node name="personagem" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(350.99997, 469)
+scale = Vector2(2.3292255, 2.4230769)
+texture = SubResource("AtlasTexture_ifsrj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 178.0
+offset_right = 531.0
+offset_bottom = 224.0
+theme = ExtResource("3_tliaq")
+text = "Não acredito que sai do VAZO"
+label_settings = SubResource("LabelSettings_tliaq")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 64.0
+offset_right = 360.0
+offset_bottom = 110.0
+theme = ExtResource("3_tliaq")
+text = "Pelo menos cheguei em casa."
+label_settings = SubResource("LabelSettings_tliaq")
+
+[node name="Label" type="Label" parent="Label/Label"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 64.0
+offset_right = 360.0
+offset_bottom = 110.0
+theme = ExtResource("3_tliaq")
+text = "Obrigado."
+label_settings = SubResource("LabelSettings_tliaq")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 613.0
+offset_top = 365.0
+offset_right = 844.0
+offset_bottom = 419.0
+theme = ExtResource("4_0vroc")
+text = "VOLTAR PARA HOME"
+script = ExtResource("5_sfkss")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nhn8a")
+volume_db = 3.525
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

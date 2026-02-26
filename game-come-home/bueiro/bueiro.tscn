@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8p7fcs12vyum"]
+
+[ext_resource type="AudioStream" uid="uid://diipefemip3v5" path="res://songs/bueiro_snd.mp3" id="1_e7ttj"]
+
+[node name="bueiro" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_e7ttj")

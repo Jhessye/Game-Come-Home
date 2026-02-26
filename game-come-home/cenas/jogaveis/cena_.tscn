@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddbcwxsin628n"]
+[gd_scene load_steps=8 format=3 uid="uid://ddbcwxsin628n"]
 
 [ext_resource type="PackedScene" uid="uid://6rq0whu4i7mb" path="res://cenas/floresta/fundo.tscn" id="1_2dkdh"]
 [ext_resource type="Script" uid="uid://bdohp1auuygal" path="res://script/cenas/cena_.gd" id="1_cwtp3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_lw6dr"]
 [ext_resource type="PackedScene" uid="uid://dppbh5bp1mm16" path="res://cenas/personagens/terra.tscn" id="4_iok8k"]
 [ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="5_lw6dr"]
+[ext_resource type="Theme" uid="uid://p71574o2je55" path="res://theme/mundo_FRASE.tres" id="7_yi8no"]
 
 [node name="cena_" type="Node2D"]
 script = ExtResource("1_cwtp3")
@@ -13,11 +14,14 @@ script = ExtResource("1_cwtp3")
 [node name="floresta_1" parent="." instance=ExtResource("1_2dkdh")]
 
 [node name="player" parent="." instance=ExtResource("2_cwtp3")]
-position = Vector2(92, 512)
+position = Vector2(262, 493)
 
-[node name="terra" parent="." instance=ExtResource("4_iok8k")]
-position = Vector2(886, 325)
+[node name="terra" parent="." node_paths=PackedStringArray("player", "left_limit", "right_limit") instance=ExtResource("4_iok8k")]
+position = Vector2(700, 473)
 scale = Vector2(0.48493838, 0.46361592)
+player = NodePath("../player")
+left_limit = NodePath("../left")
+right_limit = NodePath("../right")
 
 [node name="level_end" parent="." instance=ExtResource("3_lw6dr")]
 position = Vector2(1151, 257)
@@ -35,3 +39,21 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 285.0
+offset_right = 478.0
+offset_bottom = 331.0
+theme = ExtResource("7_yi8no")
+text = "X -> selecionar/ataque/defesa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right" type="Marker2D" parent="."]
+position = Vector2(988, 493)
+gizmo_extents = 22.0
+
+[node name="left" type="Marker2D" parent="."]
+position = Vector2(130, 508)
+gizmo_extents = 22.0

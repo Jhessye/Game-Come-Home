@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	GlobalAudioStreamPlayer.stop()
 	SongBg.stop()
+	SongBueiro.play()
 	pass # Replace with function body.
 
 

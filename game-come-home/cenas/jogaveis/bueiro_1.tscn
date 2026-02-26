@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfi2s0w4a2xgx"]
+[gd_scene load_steps=10 format=3 uid="uid://dfi2s0w4a2xgx"]
 
 [ext_resource type="Texture2D" uid="uid://cc5qgj5icaukj" path="res://bueiro/bueiro_1.png" id="1_crkup"]
 [ext_resource type="Script" uid="uid://dlyvrp37yha0b" path="res://script/cenas/bueiro_1.gd" id="1_w4tww"]
 [ext_resource type="PackedScene" uid="uid://broas741jll66" path="res://cenas/personagens/player.tscn" id="2_t06o1"]
 [ext_resource type="PackedScene" uid="uid://j4d5bn38tp0c" path="res://cenas/level_end.tscn" id="3_pitdx"]
 [ext_resource type="PackedScene" uid="uid://1d4n2grd4xux" path="res://cenas/inventory_ui.tscn" id="5_cgruf"]
+[ext_resource type="Texture2D" uid="uid://iwese2ji55t8" path="res://floresta/pedra.png" id="6_fdsx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crkup"]
 size = Vector2(1149, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t06o1"]
 size = Vector2(19.5, 558.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cr4ha"]
+radius = 97.68982
 
 [node name="bueiro" type="Node2D"]
 script = ExtResource("1_w4tww")
@@ -50,3 +54,17 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 metadata/_edit_use_anchors_ = true
+
+[node name="pedra" type="StaticBody2D" parent="."]
+position = Vector2(77, 32)
+
+[node name="pedra" type="Sprite2D" parent="pedra"]
+position = Vector2(552, 451)
+scale = Vector2(0.37875, 0.36625)
+texture = ExtResource("6_fdsx1")
+
+[node name="pedrinha" type="CollisionShape2D" parent="pedra"]
+position = Vector2(513, 558)
+scale = Vector2(0.37875, 0.36625)
+shape = SubResource("CircleShape2D_cr4ha")
+debug_color = Color(0.72874236, 0.39373916, 0.6910145, 0.41960785)

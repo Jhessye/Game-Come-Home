@@ -302,9 +302,8 @@ script = ExtResource("1_lbmsx")
 position = Vector2(9.0000305, -16)
 scale = Vector2(0.67333335, 0.6166667)
 sprite_frames = SubResource("SpriteFrames_lbmsx")
-animation = &"attack"
-frame = 11
-frame_progress = 1.0
+animation = &"walk"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qbpwy")

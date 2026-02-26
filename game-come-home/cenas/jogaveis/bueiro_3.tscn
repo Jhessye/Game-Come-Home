@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://drdwu7qkm84ph"]
+[gd_scene load_steps=22 format=3 uid="uid://drdwu7qkm84ph"]
 
 [ext_resource type="Texture2D" uid="uid://dq72hsu3buxhw" path="res://bueiro/bueiro_3.png" id="1_bcih6"]
+[ext_resource type="Script" uid="uid://yunkuax8b4xr" path="res://script/cenas/bueiro_3.gd" id="1_l8pmi"]
 [ext_resource type="Script" uid="uid://ci7fh8u6y17gk" path="res://script/personagens/player.gd" id="2_nh3mt"]
 [ext_resource type="Texture2D" uid="uid://brbxatn3q37v2" path="res://sprites/personagem/personagem_espada_mochila.png" id="3_py2fd"]
 [ext_resource type="Texture2D" uid="uid://1suoso416goh" path="res://sprites/personagem/personagem_normal.png" id="4_l8pmi"]
@@ -86,6 +87,7 @@ radius = 21.0
 height = 106.0
 
 [node name="bueiro_3" type="Node2D"]
+script = ExtResource("1_l8pmi")
 
 [node name="bg" type="StaticBody2D" parent="."]
 
