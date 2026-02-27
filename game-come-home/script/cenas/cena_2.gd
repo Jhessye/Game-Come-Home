@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	GlobalAudioStreamPlayer.stop()
 	SongBg.play_music_level()
+	Inventory.allow_interaction = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

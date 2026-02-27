@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh15o7uxs0625"]
+
+[ext_resource type="Texture2D" uid="uid://dfsnxyxiu4u08" path="res://floresta/fundo_caverna.png" id="1_3f5yh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r41r5"]
+size = Vector2(1152.5, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gow3t"]
+size = Vector2(24, 548)
+
+[node name="floresta_caverna" type="StaticBody2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(576.49994, 323.25)
+scale = Vector2(0.71812487, 0.811875)
+texture = ExtResource("1_3f5yh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(575.75, 608.5)
+shape = SubResource("RectangleShape2D_r41r5")
+
+[node name="naopassa" type="CollisionShape2D" parent="."]
+position = Vector2(1155, 281)
+shape = SubResource("RectangleShape2D_gow3t")

@@ -22,6 +22,7 @@ radius = 95.04956
 script = ExtResource("1_1ypn3")
 
 [node name="floresta_1" parent="." instance=ExtResource("1_v26xe")]
+collision_layer = 2
 
 [node name="Area2D" type="Area2D" parent="floresta_1"]
 script = ExtResource("3_45mus")
@@ -48,6 +49,7 @@ position = Vector2(51, 516)
 
 [node name="level_end" parent="." instance=ExtResource("5_fw20r")]
 position = Vector2(1154, 259)
+collision_layer = 8
 next_level = "cena_4"
 
 [node name="SpawnPoints" type="Node2D" parent="."]
@@ -75,6 +77,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="terra" type="StaticBody2D" parent="objetos"]
 position = Vector2(460, -54)
+collision_layer = 2
 
 [node name="terra" type="Sprite2D" parent="objetos/terra"]
 position = Vector2(-13, 511)
@@ -89,6 +92,7 @@ debug_color = Color(0.72874236, 0.39373916, 0.6910145, 0.41960785)
 
 [node name="pedra2" type="StaticBody2D" parent="objetos"]
 position = Vector2(460, 0)
+collision_layer = 2
 
 [node name="pedra" type="Sprite2D" parent="objetos/pedra2"]
 position = Vector2(552, 451)

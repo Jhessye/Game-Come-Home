@@ -7,7 +7,7 @@ func _ready():
 	ignore_texture_size = true
 	stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	custom_minimum_size = Vector2(64, 64)
-
+	clear()
 
 func set_item(new_item_id: String):
 	item_id = new_item_id

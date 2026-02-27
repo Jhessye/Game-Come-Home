@@ -11,6 +11,7 @@ extends Node2D
 func _ready() -> void:
 	GlobalAudioStreamPlayer.stop()
 	SongBg.play_music_level()
+	Inventory.allow_interaction = false
 	
 	if spawns.has_node(GameState.spawn_point):
 		player2.flip_h = false

@@ -6,8 +6,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-
 func _on_pressed() -> void:
-	$MapOverlay.visible = false
+	$"..".visible = false
 	get_tree().paused = false
-	pass # Replace with function body.

@@ -18,17 +18,20 @@ radius = 97.68982
 script = ExtResource("1_2o1rh")
 
 [node name="floresta_1" parent="." instance=ExtResource("1_rvl7v")]
+collision_layer = 8
 
 [node name="player" parent="." instance=ExtResource("2_y6gvf")]
 position = Vector2(42, 514)
 
 [node name="level_end" parent="." instance=ExtResource("4_dwsva")]
 position = Vector2(1151, 259)
+collision_layer = 8
 next_level = "cena_3"
 
 [node name="objetos" type="Node2D" parent="."]
 
 [node name="folha" type="StaticBody2D" parent="objetos"]
+collision_layer = 2
 
 [node name="folha" type="Sprite2D" parent="objetos/folha"]
 position = Vector2(900, 387)
@@ -42,6 +45,7 @@ shape = SubResource("RectangleShape2D_hkgpt")
 debug_color = Color(0.8296298, 0.3575275, 0.44506824, 0.41960785)
 
 [node name="pedra" type="StaticBody2D" parent="objetos"]
+collision_layer = 2
 
 [node name="pedra" type="Sprite2D" parent="objetos/pedra"]
 position = Vector2(552, 451)

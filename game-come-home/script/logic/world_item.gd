@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var item_id: String = "espada"
+@export var item_id: String = "mapa"
 @export var icon: Texture2D   # imagem que vai aparecer no inventário
 
 @onready var sprite := $Sprite2D

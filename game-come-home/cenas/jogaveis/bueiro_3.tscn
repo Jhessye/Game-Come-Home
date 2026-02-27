@@ -90,6 +90,7 @@ height = 106.0
 script = ExtResource("1_l8pmi")
 
 [node name="bg" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="bg"]
 texture_filter = 1
@@ -140,6 +141,7 @@ shape = SubResource("CapsuleShape2D_15dsx")
 
 [node name="level_end" parent="." instance=ExtResource("7_nh3mt")]
 position = Vector2(66, 302)
+collision_layer = 8
 next_level = "final_cene"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

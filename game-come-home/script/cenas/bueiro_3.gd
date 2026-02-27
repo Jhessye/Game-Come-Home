@@ -5,8 +5,5 @@ extends Node2D
 func _ready() -> void:
 	GlobalAudioStreamPlayer.stop()
 	SongBg.stop()
-	SongBueiro.play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	SongBueiro.play_music_level()
+	Inventory.allow_interaction = false

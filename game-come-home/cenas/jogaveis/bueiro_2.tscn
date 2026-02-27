@@ -268,6 +268,7 @@ script = ExtResource("1_1f6s8")
 metadata/_edit_vertical_guides_ = [1134.0]
 
 [node name="bg" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="bg"]
 texture_filter = 1
@@ -285,6 +286,7 @@ shape = SubResource("RectangleShape2D_1f6s8")
 
 [node name="level_end" parent="." instance=ExtResource("4_5k5o0")]
 position = Vector2(5, 304)
+collision_layer = 8
 next_level = "bueiro_3"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

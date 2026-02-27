@@ -50,6 +50,16 @@ text = "X -> selecionar/ataque/defesa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 364.0
+offset_top = 101.0
+offset_right = 782.0
+offset_bottom = 147.0
+theme = ExtResource("7_yi8no")
+text = "Use os numeros do teclado (1,2,3)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="right" type="Marker2D" parent="."]
 position = Vector2(988, 493)
 gizmo_extents = 22.0

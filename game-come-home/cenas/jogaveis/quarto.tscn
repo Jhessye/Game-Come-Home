@@ -51,7 +51,7 @@ offset_top = 94.0
 offset_right = 803.0
 offset_bottom = 133.0
 theme = ExtResource("15_x6gb1")
-text = "CLIQUE NOS OBJETOS ESCOLHIDOS PARA LEVAR NA VIAJEM!"
+text = "CLIQUE NOS OBJETOS ESCOLHIDOS PARA LEVAR NA VIAGEM!"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -79,9 +79,8 @@ text = "PRONTO"
 position = Vector2(236, -10)
 
 [node name="mapa" parent="itens" instance=ExtResource("6_qu5co")]
-position = Vector2(53.000004, 280)
+position = Vector2(42, 215)
 rotation = 0.1653527
-scale = Vector2(0.2, 0.2)
 
 [node name="espada" parent="itens" instance=ExtResource("8_hy3b0")]
 position = Vector2(884, 210)

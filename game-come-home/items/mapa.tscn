@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://fd6af8fugatl" path="res://script/logic/world_item.gd" id="2_qxlxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_im4iq"]
-size = Vector2(125.52721, 36.952694)
+size = Vector2(238.0141, 135.10027)
 
 [node name="mapa" type="Node2D"]
+scale = Vector2(0.4, 0.3)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-5, 10)
 script = ExtResource("2_qxlxg")
-item_id = "mapa"
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(147.23439, 340)
@@ -20,7 +20,7 @@ scale = Vector2(0.10345698, 0.10250001)
 texture = ExtResource("1_ceepn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(162.33485, 337.77185)
+position = Vector2(164.99998, 331.66666)
 rotation = -0.7000358
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_im4iq")

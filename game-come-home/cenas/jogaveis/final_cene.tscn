@@ -39,7 +39,7 @@ offset_top = 178.0
 offset_right = 531.0
 offset_bottom = 224.0
 theme = ExtResource("3_tliaq")
-text = "Não acredito que sai do VAZO"
+text = "Não acredito que sai do VASO"
 label_settings = SubResource("LabelSettings_tliaq")
 
 [node name="Label" type="Label" parent="Label"]

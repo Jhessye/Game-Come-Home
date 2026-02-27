@@ -7,12 +7,9 @@ var selected_index := -1
 func _ready():
 	slots.clear()
 	find_slots(self)
-	# 🔥 NÃO seleciona nada de início
-	# select_slot(0)  # <-- REMOVA ISSO
 	selected_index = -1
 	refresh()
 
-# 🔥 NOVO: método para resetar ao fechar inventário
 func close_inventory():
 	if selected_index != -1:
 		slots[selected_index].set_selected(false)
@@ -33,7 +30,6 @@ func _unhandled_input(event):
 		select_slot(2)
 
 func select_slot(index: int):
-	# se clicar no mesmo slot → deseleciona
 	if selected_index == index:
 		slots[selected_index].set_selected(false)
 		selected_index = -1
@@ -54,7 +50,7 @@ func refresh():
 	for slot in slots:
 		slot.clear()
 
-	var item_ids := Inventory.items.keys()  # <<< AQUI ESTÁ O FIX
+	var item_ids := Inventory.items.keys() 
 
 	for i in range(min(slots.size(), item_ids.size())):
 		var item_id = item_ids[i]
