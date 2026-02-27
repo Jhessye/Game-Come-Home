@@ -17,8 +17,8 @@ script = ExtResource("1_cwtp3")
 position = Vector2(262, 493)
 
 [node name="terra" parent="." node_paths=PackedStringArray("player", "left_limit", "right_limit") instance=ExtResource("4_iok8k")]
-position = Vector2(700, 473)
-scale = Vector2(0.48493838, 0.46361592)
+position = Vector2(691.00006, 482)
+scale = Vector2(0.22045368, 0.18473102)
 player = NodePath("../player")
 left_limit = NodePath("../left")
 right_limit = NodePath("../right")

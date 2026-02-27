@@ -372,21 +372,21 @@ script = ExtResource("15_msvhn")
 
 [node name="terra" parent="." node_paths=PackedStringArray("player", "left_limit", "right_limit") instance=ExtResource("10_165do")]
 position = Vector2(345, 438)
-scale = Vector2(-0.3479502, 0.27143312)
+scale = Vector2(-0.2256085, 0.18283762)
 player = NodePath("../player")
 left_limit = NodePath("../left")
 right_limit = NodePath("../right")
 
 [node name="terra2" parent="." node_paths=PackedStringArray("player", "left_limit", "right_limit") instance=ExtResource("10_165do")]
 position = Vector2(563, 565)
-scale = Vector2(-0.3479502, 0.27143312)
+scale = Vector2(-0.23396178, 0.17139329)
 player = NodePath("../player")
 left_limit = NodePath("../left")
 right_limit = NodePath("../right")
 
 [node name="terra3" parent="." node_paths=PackedStringArray("player", "left_limit", "right_limit") instance=ExtResource("10_165do")]
 position = Vector2(228, 562)
-scale = Vector2(-0.3479502, 0.27143312)
+scale = Vector2(-0.22031413, 0.16552018)
 player = NodePath("../player")
 left_limit = NodePath("../left")
 right_limit = NodePath("../right")
