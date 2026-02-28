@@ -304,6 +304,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(1087, 545)
+collision_mask = 14
 script = ExtResource("3_ytpiw")
 
 [node name="player" type="Sprite2D" parent="player"]
