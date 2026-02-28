@@ -9,6 +9,7 @@ size = Vector2(1152.5, 85)
 size = Vector2(24, 548)
 
 [node name="floresta_1" type="StaticBody2D"]
+collision_layer = 2
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(576.49994, 323.25)
